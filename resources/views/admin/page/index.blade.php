@@ -3,6 +3,7 @@
 @section('content')
     <div class="nk-block nk-block-lg col-md-11 mx-4 my-4">
         <div class="nk-block-head">
+            <a href="{{route('page.create')}}" class="btn btn-outline-primary mb-4" style="float: right">Sahifa qo'shish</a>
             <div class="nk-block-head-content">
                 <h4 class="nk-block-title">Sahifalar jadvali</h4>
             </div>

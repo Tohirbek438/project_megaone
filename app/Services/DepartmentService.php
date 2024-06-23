@@ -27,10 +27,10 @@ class DepartmentService
         $department = new Departments();
         $department->title_uz = $request->title_uz;
         $department->title_ru = $request->title_ru;
-        $department->title_eng = $request->title_eng;
+        $department->title_en = $request->title_eng;
         $department->description_uz = $request->description_uz;
         $department->description_ru = $request->description_ru;
-        $department->description_eng = $request->description_en;
+        $department->description_en = $request->description_en;
         $department->image_id = $image->id;
         $department->save();
         return $department;
@@ -57,10 +57,10 @@ class DepartmentService
         }
         $department->title_uz = $request->title_uz;
         $department->title_ru = $request->title_ru;
-        $department->title_eng = $request->title_eng;
+        $department->title_en = $request->title_eng;
         $department->description_uz = $request->description_uz;
         $department->description_ru = $request->description_ru;
-        $department->description_eng = $request->description_eng;
+        $department->description_en = $request->description_eng;
         $department->save();
         return $department;
     }

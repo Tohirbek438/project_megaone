@@ -10,14 +10,16 @@ class BlogCategoryService
    public function CreateCategory(Request $request){
        $data = $request->validate([
            'title_uz' => 'required|min:5',
+           'title_ru' => 'string',
+           'title_en' => 'string',
            'slug' => 'required|min:5',
-           'description_uz' => 'required',
            'status' => 'required'
        ]);
        $category = BlogCategory::create([
            'title_uz' => $data['title_uz'],
+           'title_ru' => $data['title_ru'],
+           'title_en' => $data['title_en'],
            'slug' => $data['slug'],
-           'description_uz' => $data['description_uz'],
            'status' => $data['status'] ?? 1,
        ]);
        return $category;

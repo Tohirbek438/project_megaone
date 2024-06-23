@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_uz');
             $table->string('name_ru')->nullable();
-            $table->string('name_eng')->nullable();
+            $table->string('name_en')->nullable();
             $table->integer('image_id');
             $table->string('alter_media');
             $table->integer('category_id');

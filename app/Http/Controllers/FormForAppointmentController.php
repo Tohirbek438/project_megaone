@@ -45,7 +45,7 @@ class FormForAppointmentController extends Controller
 
         $form->menu_id = $request->menu_id;
         $form->save();
-        return redirect()->route('form.index')->with('success', 'Form entry created successfully!');
+        return redirect()->route('form.index')->with('success', 'Saqlandi!');
     }
 
     /**
@@ -62,8 +62,13 @@ class FormForAppointmentController extends Controller
     public function edit(string $id)
     {
         $form = AppointmentForm::findOrFail($id);
-        return view('admin.form.edit-modal',['form'=>$form]);
-    }
+        if(isset($form)) {
+            return view('admin.form.edit-modal', ['form' => $form]);
+        }
+        else{
+            return view('error.404');
+        }
+        }
 
     /**
      * Update the specified resource in storage.
@@ -93,7 +98,7 @@ class FormForAppointmentController extends Controller
 
         $form->menu_id = $request->menu_id;
         $form->save();
-        return redirect()->route('form.index')->with('success', 'Form entry created successfully!');
+        return redirect()->route('form.index')->with('success', 'Tahrirlandi!');
     }
 
     /**

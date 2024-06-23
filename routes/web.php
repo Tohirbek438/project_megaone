@@ -8,13 +8,16 @@ Route::get('/lang/{lang}', function ($lang) {
 })->name('language');
 Route::get('/', [\App\Http\Controllers\SiteController::class, 'index'])->name('home');
 Route::get('/contact', [\App\Http\Controllers\SiteController::class, 'contact'])->name('site.contact');
-Route::get('/blogs', [\App\Http\Controllers\BlogController::class, 'index'])->name('blogs');
+Route::get('/blog-index/{name?}', [\App\Http\Controllers\BlogController::class, 'index'])->name('blogs-index');
+Route::get('/blogs-show/{id}', [\App\Http\Controllers\BlogController::class, 'show'])->name('site.show');
+Route::get('/filter',[\App\Http\Controllers\FilterBlogController::class,'filter'])->name('filter');
+Route::post('/save-appointments',[\App\Http\Controllers\AppointmentSaveController::class,'saveAppointments'])->name('save-appointments');
 Route::middleware('auth')->group(function () {
     Route::get('/admin/index', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.index');
     Route::resource('admin/blog', \App\Http\Controllers\AdminBlogController::class);
-    Route::resource('admin/blog-category', \App\Http\Controllers\BlogCategoryController::class);
+    Route::resource('admin/category-blog', \App\Http\Controllers\BlogCategoryController::class);
     Route::resource('admin/media', \App\Http\Controllers\MediaAdminController::class);
-    Route::resource('admin/media-category', \App\Http\Controllers\CategoryMediaController::class);
+    Route::resource('admin/category-media', \App\Http\Controllers\CategoryMediaController::class);
     Route::resource('admin/department', \App\Http\Controllers\DepartmentController::class);
     Route::resource('admin/comment', \App\Http\Controllers\CommentController::class);
     Route::resource('admin/treatment', \App\Http\Controllers\TreatmentController::class);

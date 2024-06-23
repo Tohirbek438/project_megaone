@@ -38,7 +38,7 @@ class AdminUserController extends Controller
             return view('admin.admin.admin-show', ['user' => $user]);
         }
         else{
-            return "Xato";
+            return view('error.404');
         }
         }
 

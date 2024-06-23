@@ -31,13 +31,13 @@ class PageService
         }
         $page->name_uz = $request->name_uz;
         $page->name_ru = $request->name_ru ?? null;
-        $page->name_eng = $request->name_eng ?? null;
+        $page->name_en = $request->name_eng ?? null;
         $page->title_uz = $request->title_uz;
         $page->title_ru = $request->title_ru ?? null;
-        $page->title_eng = $request->title_eng ?? null;
+        $page->title_en = $request->title_eng ?? null;
         $page->description_uz = $request->description_uz;
         $page->description_ru = $request->description_ru ?? null;
-        $page->description_eng = $request->description_eng ?? null;
+        $page->description_en = $request->description_eng ?? null;
         $page->date = $request->date;
         $page->tags = $request->tags;
         $page->status = $request->status;
@@ -69,10 +69,13 @@ class PageService
         }
         $page->name_uz = $request->name_uz;
         $page->name_ru = $request->name_ru ?? null;
+        $page->name_en = $request->name_en ?? null;
         $page->title_uz = $request->title_uz;
         $page->title_ru = $request->title_ru ?? null;
+        $page->title_en = $request->title_en ?? null;
         $page->description_uz = $request->description_uz;
         $page->description_ru = $request->description_ru ?? null;
+        $page->description_en = $request->description_en ?? null;
         $page->date = $request->date;
         $page->tags = $request->tags;
         $page->status = $request->status;

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title_uz');
             $table->string('title_ru')->nullable();
-            $table->string('title_eng')->nullable();
+            $table->string('title_en')->nullable();
             $table->string('percent');
             $table->integer('menu_id');
             $table->timestamps();

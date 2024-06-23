@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title_ru')->nullable();
             $table->string('title_eng')->nullable();
             $table->string('description_ru')->nullable();
-            $table->string('description_eng')->nullable();
+            $table->string('description_en')->nullable();
             $table->integer('image_id');
             $table->timestamps();
         });

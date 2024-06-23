@@ -1,3 +1,5 @@
+<h2 align="center"><span class="title-clr">@lang('words.our_blog')</span></h2>
+<br>
 <section id="ourblogs" class="bg-light">
     <div class="container">
         @if(isset($blog_start))
@@ -8,7 +10,7 @@
                         <div class="blog-text">
                             <h2>{{$blog->{'title_'.App::getLocale() } ?? null}}</h2>
                             <p>{{$blog->{'description_'.App::getLocale() } ?? null}}</p>
-                            <a href="{{route('blogs')}}"
+                            <a href="{{route('blogs-index')}}"
                                class="btn btn-rounded btn-large btn-drk-blue fadeInDown-slide animated  text-uppercase">Batafsil</a>
                         </div>
                     </div>
@@ -40,8 +42,8 @@
                     <div class="blog-text">
                         <h2>{{$blog->{'title_'.App::getLocale() } ?? "" }}</h2>
                         <p>{{$blog->{'description_'.App::getLocale() }  ?? null}}</p>
-                        <a href="{{route('blogs')}}"
-                           class="btn btn-rounded btn-large btn-drk-blue fadeInDown-slide animated  text-uppercase">Batafsil</a>
+                        <a href="{{route('blogs-index')}}"
+                           class="btn btn-rounded btn-large btn-drk-blue fadeInDown-slide animated  text-uppercase">@lang('words.read_more')</a>
                     </div>
                 </div>
                 <div class="col-md-6">

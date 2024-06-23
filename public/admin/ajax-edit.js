@@ -12,13 +12,13 @@ function Edit(id) {
 function Delete(id) {
     $.ajax({
         type: "DELETE",
-        url: "/admin/blog-category/" + id,
+        url: "/admin/category-blog/" + id,
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
         success: function (response) {
             console.log(response);
-            window.location = "/admin/blog-category/";
+            window.location = "/admin/category-blog/";
         },
         error: function (error) {
         }
@@ -87,7 +87,7 @@ function DeleteMedia(id) {
 //MediaCategory
 function editCategoryMedia(id){
     $.ajax({
-        url: '/admin/media-category/'+id+'/edit',
+        url: '/admin/category-media/'+id+'/edit',
         type: 'GET',
         success: function (response) {
             if (response.message) {
@@ -241,6 +241,23 @@ function EditForm(id){
         success: function (response) {
             if (response.message) {
                 $('#showForm').html(response.html);
+            }
+            else {
+            }
+        },
+        error: function (xhr, status, error) {
+        }
+    });
+}
+//EditBlog
+//admin/blog-category/{blog_category}/edit
+function EditBlog(id){
+    $.ajax({
+        url: '/admin/category-blog/'+id+'/edit',
+        type: 'GET',
+        success: function (response) {
+            if (response.message) {
+                $('#editBlog').html(response.html);
             }
             else {
             }

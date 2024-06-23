@@ -17,7 +17,7 @@
 
         <div class="modal-body">
             @if(isset($category))
-                <form action="{{ route('media-category.update',$category->id ?? null)}}" method="POST" class="mt-4"
+                <form action="{{ route('category-media.update',$category->id ?? null)}}" method="POST" class="mt-4"
                       enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -43,11 +43,22 @@
                             </div>
                             <div class="form-group"><label class="form-label" for="addName">Sarlavha
                                     english</label><input
-                                    type="text" class="form-control" name="title_eng" id="addName"
+                                    type="text" class="form-control" name="title_en" id="addName"
                                     value="{{$category->title_en}}"
-                                @error('title_eng')
+                                @error('title_en')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label class="form-label" for="pay-amount">Menyu tanlang</label>
+                                <div class="form-control-wrap">
+                                    <select name="menu_id" id="" class="form-control" required>
+                                        @foreach(\App\Models\Menus::all() as $menu)
+                                            <option value="{{$menu->id}}">{{$menu->name_uz}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">

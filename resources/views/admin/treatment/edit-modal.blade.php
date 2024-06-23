@@ -31,7 +31,7 @@
                             <label class="form-label" for="email-address">Nomi eng</label>
                             <div class="form-control-wrap">
                                 <input type="text" class="form-control" id="email-address" name="title_eng"
-                                       placeholder="Enter your name in English" value="{{$treatment->title_eng}}">
+                                       placeholder="Enter your name in English" value="{{$treatment->title_en}}">
                             </div>
                         </div>
                     </div>

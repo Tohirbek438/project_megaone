@@ -27,7 +27,7 @@ class GalleryService
         $media = Gallery::create([
             'name_uz' => $request->input('title_uz'),
             'name_ru' => $request->input('title_ru'),
-            'name_eng' => $request->input('title_eng'),
+            'name_en' => $request->input('title_eng'),
             'alter_media' => $request->input('alter_image'),
             'image_id' => $image->id,
             'category_id' => $request->input('category_id'),
@@ -56,7 +56,7 @@ class GalleryService
         $media->update([
             'name_uz' => $request->input('title_uz'),
             'name_ru' => $request->input('title_ru'),
-            'name_eng' => $request->input('title_eng'),
+            'name_en' => $request->input('title_eng'),
             'alter_media' => $request->input('alter_image'),
             'category_id' => $request->input('category_id'),
         ]);

@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name_uz');
             $table->string('name_ru')->nullable();
-            $table->string('name_eng')->nullable();
+            $table->string('name_en')->nullable();
             $table->text('description_uz');
             $table->text('description_ru')->nullable();
-            $table->text('description_eng')->nullable();
+            $table->text('description_en')->nullable();
             $table->text('icon');
             $table->integer('status')->default(3);
             $table->timestamps();

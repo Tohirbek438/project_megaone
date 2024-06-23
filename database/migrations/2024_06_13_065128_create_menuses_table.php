@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name_uz');
             $table->string('name_ru')->nullable();
-            $table->string('name_eng')->nullable();
+            $table->string('name_en')->nullable();
             $table->string('tags');
             $table->integer('status')->default(1);
             $table->timestamps();

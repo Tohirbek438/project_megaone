@@ -19,7 +19,7 @@ class AdminBlogController extends Controller
 
     public function index()
     {
-        $blogs = Blog::paginate(1);
+        $blogs = Blog::all();
         $blogCategory = BlogCategory::all();
         return view('admin.blog.blog-all', ['blogs' => $blogs, 'blogCategory' => $blogCategory]);
     }
@@ -38,14 +38,25 @@ class AdminBlogController extends Controller
 
     public function show(string $id)
     {
-
+        $blog = Blog::find($id);
+        if (isset($blog)) {
+            return view('admin.blog.show', ['blog' => $blog]);
+        }
+        else{
+            return view('error.404');
+        }
     }
     public function edit($id)
     {
         $blog = Blog::find($id);
-        $blogCategory = BlogCategory::all();
-        return view('admin.blog.edit', ['blog' => $blog, 'blogCategories' => $blogCategory]);
-    }
+        if(isset($blog)) {
+            $blogCategory = BlogCategory::all();
+            return view('admin.blog.edit', ['blog' => $blog, 'blogCategories' => $blogCategory]);
+        }
+        else{
+            return view('error.404');
+        }
+        }
 
     public function update(Request $request, string $id)
     {

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Page Title -->
-    <title>Medical</title>
+    <title>Blogs</title>
     <!-- Favicon -->
     <link rel="icon" href="{{asset('vendor')}}/img/favicon.jpg">
     <!-- Bundle -->
@@ -22,53 +22,35 @@
     <link rel="stylesheet" href="{{asset('medical')}}/css/style.css">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
-
-
-<!-- loader start-->
-{{--<div class="loader">--}}
-{{--    <div class="indicator">--}}
-{{--        <svg width="48px" height="36px">--}}
-{{--            <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>--}}
-{{--            <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>--}}
-{{--        </svg>--}}
-{{--    </div>--}}
-{{--</div>--}}
-<!-- loader ends-->
-
-
-<!--Header Start-->
 <header class="cursor-light">
 
     <!--Navigation-->
     <nav class="navbar navbar-top-default nav-radius navbar-expand-lg bg-white">
         <div class="container">
-            <a href="../index-medical.html" title="Logo" class="logo scroll">
+            <a href="{{route('home')}}" title="Logo" class="logo scroll">
                 <!--Logo Default-->
-                <img src="{{asset('vendor')}}/img/logo.png" alt="logo" class="logo-dark default">
+                <img src="{{\Illuminate\Support\Facades\Storage::url(\App\Models\Header::first()->logo)}}" alt="logo" class="logo-dark default">
             </a>
             <!--Nav Links-->
             <div class="collapse navbar-collapse">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-link " href="{{ route('home') }}">Home</a>
-                    <a class="nav-link " href="{{ route('home') }}#whymegaone">Why MegaOne</a>
-                    <a class="nav-link " href="{{ route('home') }}#appointment">Appointment</a>
-                    <a class="nav-link " href="{{ route('home') }}#pateintgallery">Pateint Gallery</a>
-                    <a class="nav-link " href="{{ route('home') }}#ourblogs">Our Blogs</a>
-                    <a class="nav-link " href="{{ route('home') }}#contactus">Contact us</a>
+                    @foreach(\App\Models\Menus::orderBy('id','ASC')->get() as $menu)
+                    <a class="nav-link " href="{{ route('home') }}#{{$menu->tags}}">{{$menu->{'name_'.App::getLocale()} }}</a>
+                    @endforeach
                 </div>
                 <div> <span class="open_search"><i class="fas fa-search"></i> </span></div>
+
                 <div class="search_block">
                     <div class="search_box animated wow fadeInUp">
                         <div class="inner">
-                            <input type="text" name="search" id="search" class="search_input" autocomplete="off" placeholder="Enter Your Keywords.." />
+                            <form action="{{route('filter')}}" method="GET">
+                            <input type="text" name="search" id="search" class="search_input" autocomplete="off" placeholder="@lang('words.enter_keywords').." />
                             <button class="search_icon glyphicon glyphicon-search"><i class="fas fa-search"></i> </button>
+                            </form>
                         </div>
                     </div>
                     <div class="search-overlay"></div>
                 </div>
-                <!-- search input-->
-            </div>
-        </div>
         <!--Side Menu Button-->
         <a href="javascript:void(0)" class="parallax-btn sidemenu_btn" id="sidemenu_toggle">
             <div class="animated-wrap sidemenu_btn_inner">
@@ -89,40 +71,26 @@
             <nav class="side-nav w-100">
 
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link " href="../index-medical.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="../index-medical.html#whymegaone">Why MegaOne</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="../index-medical.html#appointment">Appointment</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="../index-medical.html#pateintgallery">Pateint Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#ourblogs">Our Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="{{route('home')}}#contactus">Contact us</a>
-                    </li>
+                    @foreach(\App\Models\Menus::orderBy('id','ASC')->get() as $menu)
+                       <li class="nav-item"><a class="nav-link " href="{{ route('home') }}#{{$menu->tags}}">{{$menu->{'name_'.App::getLocale()} }}</a></li>
+                    @endforeach
                 </ul>
 
             </nav>
 
             <div class="side-footer text-white w-100">
+            <?php $heads = \App\Models\Header::first();?>
+                @if(isset($heads))
                 <ul class="social-icons-simple">
-                    <li class="animated-wrap"><a class="animated-element" href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li class="animated-wrap"><a class="animated-element" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-                    <li class="animated-wrap"><a class="animated-element" href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
+                    <li class="animated-wrap"><a class="animated-element" href="https://www.facebook.com/{{$heads->facebook}}"><i class="fab fa-facebook-f"></i> </a> </li>
+                    <li class="animated-wrap"><a class="animated-element" href="https://twitter.com/{{$heads->instagram}}"><i class="fab fa-instagram"></i> </a> </li>
+                    <li class="animated-wrap"><a class="animated-element" href="https://twitter.com/{{$heads->twitter}}"><i class="fab fa-twitter"></i> </a> </li>
                 </ul>
-                <p class="text-white">&copy; 2023 MegaOne. Made With Love by Themesindustry</p>
+                <p class="text-white">{{$heads->site_about}}</p>
+                @else
+                @endif
             </div>
         </div>
     </div>
-    <a id="close_side_menu" href="javascript:void(0);"></a>
     <!-- End side menu -->
-
-
 </header>

@@ -43,7 +43,7 @@ class MenuController extends Controller
         $menu = new Menus();
         $menu->name_uz = $request->name_uz;
         $menu->name_ru = $request->name_ru;
-        $menu->name_eng = $request->name_eng;
+        $menu->name_en = $request->name_eng;
         $menu->status = $request->status;
         $menu->tags = $request->tags;
         $menu->save();
@@ -83,7 +83,7 @@ class MenuController extends Controller
         $menu = Menus::find($id);
         $menu->name_uz = $request->name_uz;
         $menu->name_ru = $request->name_ru;
-        $menu->name_eng = $request->name_eng;
+        $menu->name_en = $request->name_eng;
         $menu->status = $request->status;
         $menu->tags = $request->tags;
         $menu->save();

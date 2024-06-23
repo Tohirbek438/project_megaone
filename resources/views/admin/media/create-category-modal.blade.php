@@ -16,7 +16,7 @@
                 </a>
             </div>
             <div class="modal-body">
-                <form action="{{ route('media-category.store')}}" method="POST" class="mt-4" enctype="multipart/form-data">
+                <form action="{{ route('category-media.store')}}" method="POST" class="mt-4" enctype="multipart/form-data">
                     @csrf
                     <div class="row g-gs">
                         <div class="col-md-12">
@@ -57,6 +57,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="col-12">
                             <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                 <li>
@@ -66,6 +67,7 @@
                                 <li><a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a></li>
                             </ul>
                         </div>
+
                     </div>
                 </form>
             </div>

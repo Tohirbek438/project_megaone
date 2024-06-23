@@ -148,8 +148,8 @@
     @error('email')
     <span style="color:red;text-align: center;">{{$message}}</span>
     @enderror
-    <label for="username">Username</label>
-    <input name="email" required type="text" placeholder="Email or Phone" id="username">
+    <label for="username">Email</label>
+    <input name="email" required type="text" placeholder="Email" id="username">
 
     <label for="password">Password</label>
     <input type="password" required name="password" placeholder="Password" id="password">

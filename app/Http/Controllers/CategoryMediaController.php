@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategoryForGallery;
-use App\Models\Gallery;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class CategoryMediaController extends Controller
@@ -38,7 +38,7 @@ class CategoryMediaController extends Controller
         $mediaCategory->title_en = $validatedData['title_eng'];
         $mediaCategory->menu_id = $validatedData['menu_id'];
         $mediaCategory->save();
-        return redirect()->route('media-category.index')->with('success', 'Media category created successfully.');
+        return redirect()->route('category-media.index')->with('success', 'Media category created successfully.');
     }
     public function show(string $id)
     {
@@ -58,6 +58,7 @@ class CategoryMediaController extends Controller
             'title_uz' => 'required|min:5',
             'title_ru' => 'min:5',
             'title_en' => 'min:5',
+             'menu_id' => 'required'
         ]);
         $category = CategoryForGallery::findOrFail($id);
         $category->update($data);
@@ -70,7 +71,13 @@ class CategoryMediaController extends Controller
     public function destroy(string $id)
     {
         $category = CategoryForGallery::findOrFail($id);
+        $deletedMedia = 0;
         $category->delete();
+        foreach ($category->gallery as $media) {
+            if ($media->delete()) {
+                $deletedMedia++ ;
+            }
+        }
         return redirect()->back();
     }
 }

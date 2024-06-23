@@ -36,9 +36,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Email uz</label>
+                                    <label class="form-label" for="phone-no">Tel no'mer uz</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" name="email_uz" required class="form-control" id="phone-no" placeholder="Email kiriting">
+                                        <input type="text" name="email_uz" required class="form-control" id="phone-no" placeholder="Tel no'mer kiriting">
                                     </div>
                                     @error('email_uz')
                                     <span class="text-danger">{{$message}}</span>
@@ -56,14 +56,14 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Habar uz</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_uz" id="" cols="1" rows="1">{{old('message_uz')}}</textarea>
+                                        <input type="text" name="message_uz" class="form-control" value="{{old('message_uz')}}" required>
                                     </div>
                                     @error('message_uz')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Habar uz</label>
+                                    <label class="form-label" for="phone-no">Menyu tanlang</label>
                                     <div class="form-control-wrap">
                                         <select name="menu_id" id="" class="form-control">
                                             @foreach(\App\Models\Menus::all() as $menu)
@@ -89,9 +89,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Email ru</label>
+                                    <label class="form-label" for="phone-no">Tel no'mer ru</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" name="email_ru" required class="form-control" id="phone-no" placeholder="Email kiriting">
+                                        <input type="text" name="email_ru" required class="form-control" id="phone-no" placeholder="Tel no'mer kiriting">
                                     </div>
                                     @error('email_uz')
                                     <span class="text-danger">{{$message}}</span>
@@ -107,9 +107,9 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Xabar eng</label>
+                                    <label class="form-label" for="phone-no">Xabar ru</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_ru" id="" cols="1" rows="1">{{old('message_ru')}}</textarea>
+                                        <input type="text" name="message_ru" class="form-control" value="{{old('message_ru')}}">
                                     </div>
                                     @error('message_ru')
                                     <span class="text-danger">{{$message}}</span>
@@ -142,7 +142,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Vaqti eng</label>
                                     <div class="form-control-wrap">
-                                        <input type="text" name="date_eng" required class="form-control" id="phone-no" placeholder="Vaqti ingliz tilida kiriting">
+                                        <input type="text" name="date_en" required class="form-control" id="phone-no" placeholder="Vaqti ingliz tilida kiriting">
                                     </div>
                                     @error('date_en')
                                     <span class="text-danger">{{$message}}</span>
@@ -151,9 +151,9 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Habar en</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_en" id="" cols="1" rows="1">{{old('message_en')}}</textarea>
+                                        <input type="text" name="message_en" class="form-control" value="{{old('message_en')}}" required>
                                     </div>
-                                    @error('email_uz')
+                                    @error('message_en')
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>

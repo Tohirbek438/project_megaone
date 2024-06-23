@@ -18,8 +18,8 @@
                     <td>{{$department->title_ru}}</td>
                 </tr>
                 <tr>
-                    <th>Sarlavha uz</th>
-                    <td>{{$department->title_eng}}</td>
+                    <th>Sarlavha en</th>
+                    <td>{{$department->title_en}}</td>
                 </tr>
                 <tr>
                     <th>Rasm</th>
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <th>Tavsif eng</th>
-                    <td>{{$department->description_eng}}</td>
+                    <td>{{$department->description_en}}</td>
                 </tr>
             </table>
         </div>

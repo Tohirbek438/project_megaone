@@ -6,11 +6,11 @@
     </div>
     <div class="nk-block nk-block-lg col-lg-11 mx-3 my-2">
         <div class="nk-block-head">
+            <a href="{{route('blog.create')}}" class="btn btn-outline-primary mb-4" style="float: right;">Blog qo'shish</a>
             <div class="nk-block-head-content">
-                <h4 class="nk-block-title">Data Table</h4>
+
+                <h4 class="nk-block-title mx-4 my-3">Bloglar jadvali</h4>
                 <div class="nk-block-des">
-                    <p>Using the most basic table markup, here’s how <code class="code-class">.table</code> based tables
-                        look by default.</p>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                             </td>
                             <td>{{$blog->created_at->format('d.m.Y')}}</td>
                             <td class="">
-                                <a style="display: inline-block" class="fas fa-eye"></a>
+                                <a style="display: inline-block" href="{{route('blog.show',$blog->id)}}" class="fas fa-eye"></a>
                                 <a style="display: inline-block" href="{{ route('blog.edit',$blog->id) }}"><i class="fas fa-pen"></i></a>
                                 <form style="display: inline-block" action="{{ route('blog.destroy',$blog->id) }}" method="POST">
                                     @csrf

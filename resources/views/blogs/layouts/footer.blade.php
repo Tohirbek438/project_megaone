@@ -18,10 +18,9 @@
         </div>
     </div>
 </section>
-<!--Footer End-->
 
 
-<!-- JavaScript -->
+
 <script src="{{asset('vendor')}}/js/bundle.min.js"></script>
 <!-- Plugin Js -->
 <script src="{{asset('vendor')}}/js/jquery.fancybox.min.js"></script>
@@ -53,7 +52,5 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4fusEY9kSwNHgtK8KOgyoTsyP5Tb2NXo"></script>
 <script src="js/map.js"></script>
 <script src="js/script.js"></script>
-
-
 </body>
 </html>

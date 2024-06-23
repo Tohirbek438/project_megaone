@@ -52,116 +52,113 @@
                 <div class="nk-sidebar-content">
                     <div class="nk-sidebar-menu" data-simplebar>
                         <ul class="nk-menu">
-                            <li class="nk-menu-item has-sub {{ Route::is('admin.index') ? 'active' : '' }}">
+                            <li class="nk-menu-heading">
+                                <h6 class="overline-title text-primary-alt">Asosiy sahifa</h6>
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item">
                                 <a href="{{route('admin.index')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-bag"></em></span>
-                                    <span class="nk-menu-text">Asosiy sahifa</span><span class="nk-menu-badge"></span>
+                                    <span class="nk-menu-icon"><em class="icon ni ni-dashboard"></em></span>
+                                    <span class="nk-menu-text">Bosh sahifa</span>
                                 </a>
                             </li><!-- .nk-menu-item -->
                             <li class="nk-menu-heading">
                                 <h6 class="overline-title text-primary-alt">Sahifalar</h6>
-                            </li><!-- .nk-menu-item -->
-                            <li class="nk-menu-item"><a href="#" class="nk-menu-link nk-menu-toggle"><span
-                                        class="nk-menu-icon"><em class="icon ni ni-template"></em></span><span
-                                        class="nk-menu-text">Asosiy ma'lumotlar</span></a>
-                                <ul class="nk-menu-sub" style="">
-                                    <li class="nk-menu-item"><a href="{{ route('header.index') }}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Sayt ma'lumotlari</span></a></li>
-                                    <li class="nk-menu-item"><a href="{{route('contact.index')}}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Bog'lanish malumotlar</span></a></li>
-                                    <li class="nk-menu-item"><a href="{{route('home.index')}}"
-                                                                class="nk-menu-link"><span class="nk-menu-text">Turkum ma'lumotlar</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nk-menu-item has-sub"><a href="#"
-                                                                class="nk-menu-link nk-menu-toggle"><span
-                                        class="nk-menu-icon"><em class="icon ni ni-files"></em></span><span
-                                        class="nk-menu-text">Sahifalar</span></a>
-                                <ul class="nk-menu-sub" style="display: none;">
-                                    <li class="nk-menu-item"><a href="{{route('page.create')}}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Sahifa qo'shish</span></a></li>
-                                    <li class="nk-menu-item"><a href="{{route('page.index')}}"
-                                                                class="nk-menu-link"><span class="nk-menu-text">Sahifalar</span></a>
-                                    </li>
-                                    <li class="nk-menu-item"><a href="{{route('menu.index')}}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Menyular</span></a></li>
-                                </ul>
-                            </li>
-                            <li class="nk-menu-item has-sub"><a href="#"
-                                                                class="nk-menu-link nk-menu-toggle"><span
-                                        class="nk-menu-icon"><em class="icon ni ni-template"></em></span><span
-                                        class="nk-menu-text">Bloglar</span></a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item"><a href="{{ route('blog.index') }}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Barcha bloglar</span></a></li>
-                                    <li class="nk-menu-item"><a href="{{route('blog.create')}}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-text">Blog qo'shish</span></a></li>
-                                    <li class="nk-menu-item"><a href="{{ route('blog-category.index') }}"
-                                                                class="nk-menu-link"><span class="nk-menu-text">Blog turkumlar</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
-                                        class="nk-menu-icon"><em class="icon ni ni-img"></em></span><span
-                                        class="nk-menu-text">Medialar</span></a>
-                                <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item"><a href="{{ route('media.index') }}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-icon"></span><span
-                                                class="nk-menu-text">Media</span></a></li><!-- .nk-menu-item -->
-                                    <li class="nk-menu-item">
-                                        <a href="{{route('media-category.index')}}" class="nk-menu-link">
-                                            <span class="nk-menu-icon"></span>
-                                            <span class="nk-menu-text">Galleriya Turkumlar </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <!-- .nk-menu-item -->
-
-                            <li class="nk-menu-item">
-                                <a href="{{route('department.index')}}" class="nk-menu-link">
-                                    <span class="nk-menu-icon"><em class="icon ni ni-growth"></em></span>
-                                    <span class="nk-menu-text">Klinikal bo'limlar</span>
+                            </li><!-- .nk-menu-heading -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb"></em></span>
+                                    <span class="nk-menu-text">Asosiy ma'lumotlar </span>
                                 </a>
-                            </li>
-                            <li class="nk-menu-item has-sub"><a href="#" class="nk-menu-link nk-menu-toggle"><span
-                                        class="nk-menu-icon"><em class="icon ni ni-img"></em></span><span
-                                        class="nk-menu-text">Uchrashuvlar</span></a>
                                 <ul class="nk-menu-sub">
-                                    <li class="nk-menu-item"><a href="{{ route('form.index') }}"
-                                                                class="nk-menu-link"><span
-                                                class="nk-menu-icon"></span><span
-                                                class="nk-menu-text">Formasi</span></a></li><!-- .nk-menu-item -->
                                     <li class="nk-menu-item">
-                                        <a href="{{route('table.index')}}" class="nk-menu-link">
-                                            <span class="nk-menu-icon"></span>
-                                            <span class="nk-menu-text">Uchrashuvlar </span>
-                                        </a>
+                                        <a href="{{route('header.index')}}" class="nk-menu-link"><span class="nk-menu-text">Sayt ma'lumotlari</span></a>
                                     </li>
-                                </ul>
-                            </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('contact.index')}}" class="nk-menu-link"><span class="nk-menu-text">Bog'lanish ma'lumotlar</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('home.index')}}" class="nk-menu-link"><span class="nk-menu-text">Turkum ma'lumotlar</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-files"></em></span>
+                                    <span class="nk-menu-text">Sahifalar</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('menu.index')}}" class="nk-menu-link"><span class="nk-menu-text">Menyular</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('page.index')}}" class="nk-menu-link"><span class="nk-menu-text">Sahifalar</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-template"></em></span>
+                                    <span class="nk-menu-text">Bloglar</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('blog.index')}}" class="nk-menu-link"><span class="nk-menu-text">Bloglar</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('category-blog.index')}}" class="nk-menu-link"><span class="nk-menu-text">Blog turkumlari</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-img"></em></span>
+                                    <span class="nk-menu-text">Medialar</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('media.index')}}" class="nk-menu-link"><span class="nk-menu-text">Medialar</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('category-media.index')}}" class="nk-menu-link"><span class="nk-menu-text">Media turkumlar</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-growth"></em></span>
+                                    <span class="nk-menu-text">Kinik bo'limlar</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('department.index')}}" class="nk-menu-link"><span class="nk-menu-text">Klinik bo'limlar</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
+                            <li class="nk-menu-item has-sub">
+                                <a href="#" class="nk-menu-link nk-menu-toggle">
+                                    <span class="nk-menu-icon"><em class="icon ni ni-card-view"></em></span>
+                                    <span class="nk-menu-text">Arizalar</span>
+                                </a>
+                                <ul class="nk-menu-sub">
+                                    <li class="nk-menu-item">
+                                        <a href="{{route('form.index')}}" class="nk-menu-link"><span class="nk-menu-text">Forma ma'lumotlar</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="{{ route('table.index') }}" class="nk-menu-link"><span class="nk-menu-text">Uchrashuvlar</span></a>
+                                    </li>
+                                </ul><!-- .nk-menu-sub -->
+                            </li><!-- .nk-menu-item -->
                             <li class="nk-menu-item has-sub">
                                 <a href="#" class="nk-menu-link nk-menu-toggle">
                                     <span class="nk-menu-icon"><em class="fas fa-hospital"></em></span>
-                                    <span class="nk-menu-text">Kassalikalar haqida</span>
+                                    <span class="nk-menu-text">Kassaliklar haqida</span>
                                 </a>
                                 <ul class="nk-menu-sub">
                                     <li class="nk-menu-item">
-                                        <a href="{{route('treatment.index')}}" class="nk-menu-link"><span
-                                                class="nk-menu-text">Kassaliklarni davolash</span></a>
+                                        <a href="{{route('treatment.index')}}" class="nk-menu-link"><span class="nk-menu-text">Kassaliklarni davolash</span></a>
                                     </li>
                                     <li class="nk-menu-item">
-                                        <a href="{{route('information.index')}}" class="nk-menu-link"><span
-                                                class="nk-menu-text">Bemorlar soni</span></a>
+                                        <a href="{{route('information.index')}}" class="nk-menu-link"><span class="nk-menu-text">Bemorlar va boshqa</span></a>
                                     </li>
                                 </ul><!-- .nk-menu-sub -->
                             </li><!-- .nk-menu-item -->

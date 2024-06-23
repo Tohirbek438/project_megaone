@@ -43,13 +43,23 @@ class DepartmentController extends Controller
     public function show(string $id)
     {
         $department = Departments::findOrFail($id);
-        return view('admin.department.show', ['department' => $department]);
+        if(isset($id)) {
+            return view('admin.department.show', ['department' => $department]);
+        }
+        else{
+            return view('error.404');
+        }
     }
     public function edit(string $id)
     {
      $department = Departments::findOrFail($id);
-     return view('admin.department.edit',['department' => $department]);
-    }
+     if(isset($department)) {
+         return view('admin.department.edit', ['department' => $department]);
+     }
+     else{
+         return view('error.404');
+     }
+     }
 
     public function update(Request $request, string $id)
     {

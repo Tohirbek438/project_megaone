@@ -12,7 +12,13 @@ class ChangePasswordController extends Controller
 {
     public function ChangeEdit($id)
     {
-        return view('admin.admin.admin-password', ['user' => User::find($id)]);
+        $user = User::find($id);
+        if(isset($user)){
+        return view('admin.admin.admin-password', ['user' =>$user]);
+    }
+    else{
+        return view('error.404');
+    }
     }
 
     public function updatePassword(Request $request,$id)

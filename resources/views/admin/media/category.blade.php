@@ -40,8 +40,8 @@
                             <td>{{$category->title_en}}</td>
                             <td>{{$category->created_at->format('d.m.Y')}}</td>
                             <td class="">
-                                <a style="display: inline-block" data-bs-toggle="modal" data-bs-target="#EditCategoryForm" onclick="editCategoryMedia({{$category->id}})" href="{{ route('media-category.edit',$category->id) }}" ><i class="fas fa-pen"></i></a>
-                                <form style="display: inline-block" action="{{ route('media-category.destroy',$category->id) }}" method="POST">
+                                <a style="display: inline-block" data-bs-toggle="modal" data-bs-target="#EditCategoryForm" onclick="editCategoryMedia({{$category->id}})" href="{{ route('category-media.edit',$category->id) }}" ><i class="fas fa-pen"></i></a>
+                                <form style="display: inline-block" action="{{ route('category-media.destroy',$category->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="fas fa-trash" style="border:none;background:none;color:#733AEA"></button>

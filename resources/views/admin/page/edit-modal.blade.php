@@ -32,7 +32,7 @@
                             <label class="form-label" for="email-address">Nomi eng</label>
                             <div class="form-control-wrap">
                                 <input required type="text" class="form-control" id="email-address" name="name_eng"
-                                       placeholder="Enter your name in English" value="{{$menu->name_eng}}">
+                                       placeholder="Enter your name in English" value="{{$menu->name_en}}">
                             </div>
                         </div>
                     </div>

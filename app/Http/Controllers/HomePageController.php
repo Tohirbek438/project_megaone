@@ -35,10 +35,10 @@ class HomePageController extends Controller
         ]);
         $menu->name_uz = $request->name_uz;
         $menu->name_ru = $request->name_ru;
-        $menu->name_eng = $request->name_eng;
+        $menu->name_en = $request->name_eng;
         $menu->description_uz = $request->description_uz;
         $menu->description_ru = $request->description_ru;
-        $menu->description_eng = $request->description_eng;
+        $menu->description_en = $request->description_eng;
         $menu->status = $request->status;
         $menu->icon = $request->icon;
         $menu->save();
@@ -80,10 +80,10 @@ class HomePageController extends Controller
         $menu = HomePage::find($id);
         $menu->name_uz = $request->name_uz;
         $menu->name_ru = $request->name_ru;
-        $menu->name_eng = $request->name_eng;
+        $menu->name_en = $request->name_eng;
         $menu->description_uz = $request->description_uz;
         $menu->description_ru = $request->description_ru;
-        $menu->description_eng = $request->description_eng;
+        $menu->description_en = $request->description_eng;
         $menu->status = $request->status;
         $menu->icon = $request->icon;
         $menu->save();

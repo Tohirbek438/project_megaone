@@ -20,7 +20,7 @@ class TreatmentService
         $treatment = TreatmentDisease::create([
             'title_uz' => $request->input('title_uz'),
             'title_ru' => $request->input('title_ru'),
-            'title_eng' => $request->input('title_eng'),
+            'title_en' => $request->input('title_eng'),
             'percent' => $request->input('percent'),
             'menu_id' => $request->input('menu_id')
         ]);
@@ -39,7 +39,7 @@ class TreatmentService
 
         $treatment->title_uz = $request->input('title_uz');
         $treatment->title_ru = $request->input('title_ru');
-        $treatment->title_eng = $request->input('title_eng');
+        $treatment->title_en = $request->input('title_eng');
         $treatment->percent = $request->input('percent');
         $treatment->save();
         return $treatment;

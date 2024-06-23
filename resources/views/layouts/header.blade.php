@@ -68,9 +68,12 @@
                 <div class="search_block">
                     <div class="search_box animated wow fadeInUp">
                         <div class="inner">
-                            <input type="text" name="search" id="search" class="search_input" autocomplete="off" placeholder="Enter Your Keywords.." />
-                            <button class="search_icon glyphicon glyphicon-search"><i class="fas fa-search"></i> </button>
+                            <form action="{{ route('filter') }}" method="GET">
+                            <input type="text" name="search" id="search" class="search_input" autocomplete="off" placeholder="@lang('words.enter_keywords')" />
+                            <button type="submit" class="search_icon glyphicon glyphicon-search"><i class="fas fa-search"></i></button>
+                            </form>
                         </div>
+
                     </div>
                     <div class="search-overlay"></div>
                 </div>

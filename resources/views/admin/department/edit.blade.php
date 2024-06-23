@@ -49,7 +49,7 @@
                                                 <label class="form-label" for="fv-phone">Sarlavha eng</label>
                                                 <div class="form-control-wrap">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" name="title_eng"  value="{{$department->title_eng}}">
+                                                        <input type="text" class="form-control" name="title_eng"  value="{{$department->title_en}}">
                                                     </div>
                                                     @error('title_eng')
                                                     <span class="text-danger">{{$message}}</span>
@@ -72,7 +72,7 @@
                                                 <div class="form-control-wrap">
                                                     <textarea rows="2" cols="2" class="form-control form-control-sm" id="fv-message"
                                                               name="description_eng" placeholder="Tavsif kiriting"
-                                                              required>{{$department->description_eng}}</textarea>
+                                                              required>{{$department->description_en}}</textarea>
                                                 </div>
                                                 @error('description_eng')
                                                 <span class="text-danger">{{$message}}</span>

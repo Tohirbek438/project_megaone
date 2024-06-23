@@ -36,8 +36,6 @@
                             <input required type="text" class="form-control" id="email-address" name="tags" placeholder="Taglar">
                         </div>
                     </div>
-
-
                     <div class="form-group">
                         <label class="form-label" for="pay-amount">Status</label>
                         <div class="form-control-wrap">

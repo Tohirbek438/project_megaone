@@ -369,8 +369,8 @@
                 <div class="col-md-12">
                     <div class="department-sub alt-font text-center">
                     </div>
-                    <div class="department-title main-font text-center"><h2>Klinik <span
-                                class="title-clr"> bo'limlar</span>
+                    <div class="department-title main-font text-center"><h2><span
+                                class="title-clr">@lang('words.clinic_department')</span>
                         </h2></div>
 
                 </div>
@@ -405,7 +405,7 @@
                         <div class="serial-box">
                             <span class="count">{{$information->patients}}</span>
                             <div class="count-line "></div>
-                            <p>Patients</p>
+                            <p>@lang('words.patients')</p>
                         </div>
 
                     </div>
@@ -414,7 +414,7 @@
                         <div class="serial-box">
                             <span class="count">{{$information->cases}}</span>
                             <div class="count-line "></div>
-                            <p>Cases</p>
+                            <p>@lang('words.cases')</p>
                         </div>
 
                     </div>
@@ -423,7 +423,7 @@
                         <div class="serial-box">
                             <span class="count">{{$information->appointments}}</span>
                             <div class="count-line "></div>
-                            <p>Appointments</p>
+                            <p>@lang('words.appointments')</p>
                         </div>
 
                     </div>
@@ -432,7 +432,7 @@
                         <div class="serial-box mb-0">
                             <span class="count">{{$information->doctors}}</span>
                             <div class="count-line "></div>
-                            <p>Doctor</p>
+                            <p>@lang('words.doctors')</p>
                         </div>
 
                     </div>
@@ -458,12 +458,14 @@
     <!-- Map -->
     @if(!$contacts->isEmpty())
         @foreach($contacts as $contact)
-
                 <?php $page = \App\Models\Page::where('menu_category', $contact->menu_id)->first(); ?>
+            @if(isset($page))
             <section id="contactus" class="contact p-0 position-relative"
                      style="background: url({{\Illuminate\Support\Facades\Storage::url($page->image->image_url)}});background-repeat: no-repeat;background-size:cover;">
                 @include('site.contact')
             </section>
+            @else
+            @endif
         @endforeach
     @else
     @endif

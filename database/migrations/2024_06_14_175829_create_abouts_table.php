@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('inquires');
             $table->string('work_days');
+            $table->string('address');
             $table->text('map_x')->nullable();
             $table->text('map_y')->nullable();
             $table->integer('menu_id');

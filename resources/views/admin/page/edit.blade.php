@@ -116,7 +116,7 @@
                                                                                                    for="addTitle">Nomi
                                                                             eng </label><input
                                                                             type="text" class="form-control"
-                                                                            name="name_eng" id="addTitle" value="{{$page->name_eng}}"
+                                                                            name="name_en" id="addTitle" value="{{$page->name_en}}"
                                                                             placeholder="Nomi english tilida"></div>
                                                                 </div>
                                                                 <div class="col-12">
@@ -124,14 +124,14 @@
                                                                                                    for="addTitle">Sarlavha
                                                                             eng</label><input
                                                                             type="text" class="form-control"
-                                                                            name="title_eng" id="addTitle" value="{{$page->title_eng}}"
+                                                                            name="title_en" id="addTitle" value="{{$page->title_en}}"
                                                                             placeholder="Title english tilida"></div>
                                                                 </div>
                                                                 <div class="col-12">
                                                                     <label class="form-label" for="tavsif">Tavsif
                                                                         eng</label>
-                                                                    <textarea id="tavsif" name="description_eng"
-                                                                              class="form-control">{{$page->description_eng}}</textarea>
+                                                                    <textarea id="tavsif" name="description_en"
+                                                                              class="form-control">{{$page->description_en}}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -221,12 +221,12 @@
                                                                     data-placeholder="Status" data-select2-id="6"
                                                                     tabindex="-1"
                                                                     aria-hidden="true">
-                                                                <option value="3" data-select2-id="8">Chop
+                                                                <option value="1" data-select2-id="8">Chop
                                                                     etilgan
                                                                 </option>
                                                                 <option value="2" data-select2-id="37">Kutilmoqda
                                                                 </option>
-                                                                <option value="1" data-select2-id="38">Qoralama
+                                                                <option value="3" data-select2-id="38">Qoralama
                                                                 </option>
                                                             </select>
                                                         </div>

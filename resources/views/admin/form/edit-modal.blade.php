@@ -3,7 +3,7 @@
 @section('title','Appointment form')
 @section('content')
     <h4 class="mx-4 mb-4">Tahrirlash</h4>
-    <div class="nk-block nk-block-lg col-md-11 mx-4 my-4">
+    <div class="nk-block nk-block-lg col-md-11 mx-4 my-4 alert alert-light">
         <div class="nk-block-head">
             @if(!isset($form))
              @else
@@ -23,6 +23,7 @@
                                     <span class="text-danger">{{$message}}</span>
                                     @enderror
                                 </div>
+
                                 <div class="form-group col-md-6">
                                     <label class="form-label" for="phone-no">Name ru</label>
                                     <div class="form-control-wrap">
@@ -35,7 +36,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
-                                        <label class="form-label" for="phone-no">Email uz</label>
+                                        <label class="form-label" for="phone-no">Tel no'mer uz</label>
                                         <div class="form-control-wrap">
                                             <input type="text" name="email_uz" value="{{$form->email_uz}}" required class="form-control" id="phone-no" placeholder="Vaqti kiriting">
                                         </div>
@@ -56,7 +57,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Habar uz</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_uz" id="" cols="1" rows="1">{{$form->message_uz}}</textarea>
+                                        <input type="text" name="message_uz" class="form-control" value="{{$form->message_uz}}">
                                     </div>
                                     @error('message_uz')
                                     <span class="text-danger">{{$message}}</span>
@@ -78,7 +79,7 @@
                             </div>
                         </div>
                                 <div class="form-group col-md-10">
-                                    <label class="form-label" for="phone-no">Email ru</label>
+                                    <label class="form-label" for="phone-no">Tel no'mer ru</label>
                                     <div class="form-control-wrap">
                                         <input type="text" name="email_ru" value="{{$form->email_ru}}" class="form-control" id="phone-no" placeholder="Email kiriting">
                                     </div>
@@ -98,7 +99,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Xabar ru</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_ru" id="" cols="1" rows="1">{{$form->message_ru}}</textarea>
+                                        <input type="text" name="message_ru" class="form-control" value="{{$form->message_ru}}">
                                     </div>
                                     @error('message_ru')
                                     <span class="text-danger">{{$message}}</span>
@@ -118,7 +119,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Email eng</label>
+                                    <label class="form-label" for="phone-no">Tel no'mer eng</label>
                                     <div class="form-control-wrap">
                                         <input type="text" name="email_en" value="{{$form->email_en}}" class="form-control" id="phone-no" placeholder="Email ingliz tilida kiriting">
                                     </div>
@@ -138,7 +139,7 @@
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Habar en</label>
                                     <div class="form-control-wrap">
-                                        <textarea class="form-control" name="message_en" id="" cols="1" rows="1">{{$form->message_en}}</textarea>
+                                        <input type="text" name="message_en" class="form-control" value="{{$form->message_en}}">
                                     </div>
                                     @error('message_en')
                                     <span class="text-danger">{{$message}}</span>

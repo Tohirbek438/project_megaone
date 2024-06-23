@@ -107,7 +107,7 @@
                                 <div class="form-group col-md-12">
                                     <label class="form-label" for="email-address">Nomi eng</label>
                                     <div class="form-control-wrap">
-                                        <input required type="text" class="form-control" value="{{$page->name_eng}}"
+                                        <input required type="text" class="form-control" value="{{$page->name_en}}"
                                                id="email-address" name="name_eng" placeholder="">
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                                     <label class="form-label" for="email-address">Tavsif eng</label>
                                     <div class="form-control-wrap">
                                             <textarea required name="description_eng"
-                                                      id="" cols="2" rows="2" class="form-control">{{$page->description_eng}}</textarea>
+                                                      id="" cols="2" rows="2" class="form-control">{{$page->description_en}}</textarea>
                                     </div>
                                 </div>
                             </div>

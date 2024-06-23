@@ -5,61 +5,19 @@
         .text-muted {
             display: none;
         }
+        .form-label{
+            font-size: 15px;
+        }
+        textarea{
+            height: 50px;
+        }
+        .form-note{
+            font-size: 12px;
+        }
     </style>
-
-    {{--    Modal--}}
-    <div class="modal fade" id="modalForm">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Customer Info</h5>
-                    <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <em class="icon ni ni-cross"></em>
-                    </a>
-                </div>
-                <div class="modal-body">
-                    <form action="#" class="mt-4">
-                        <div class="row g-gs">
-                            <div class="col-md-6">
-                                <div class="form-group"><label class="form-label" for="editName">Name</label><input
-                                        type="text" class="form-control" id="editName" placeholder="Name"
-                                        value="Uncategorized"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group"><label class="form-label" for="editSlug">Slug</label><input
-                                        type="text" class="form-control" id="editSlug" placeholder="Slug"
-                                        value="uncategorized"></div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group"><label class="form-label"
-                                                               for="editDescription">Description</label><textarea
-                                        class="form-control form-control-sm no-resize" id="editDescription"
-                                        placeholder="Edit your description"></textarea></div>
-                            </div>
-                            <div class="col-12">
-                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                                    <li>
-                                        <button type="submit" data-bs-dismiss="modal" class="btn btn-primary">Update
-                                        </button>
-                                    </li>
-                                    <li><a href="#" class="link link-light" data-bs-dismiss="modal">Cancel</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer bg-light">
-                    <span class="sub-text">Modal Footer Text</span>
-                </div>
-            </div>
-        </div>
+    <div class="modal fade" id="editBlog">
+    @include('admin.blog.edit-category-modal')
     </div>
-
-
-
-
-
-
     {{--   endModal--}}
     <div class="nk-content ">
         <div class="container-fluid">
@@ -79,25 +37,6 @@
                                         <div class="card-inner position-relative card-tools-toggle">
                                             <div class="card-title-group">
                                                 <div class="card-tools">
-                                                    <div class="form-inline flex-nowrap gx-3">
-                                                        <div class="form-wrap w-150px">
-                                                            <select
-                                                                class="form-select js-select2 select2-hidden-accessible"
-                                                                data-search="off" data-placeholder="Bulk Action"
-                                                                data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                                <option value="" data-select2-id="3">Bulk Action
-                                                                </option>
-                                                                <option value="edit">Edit</option>
-                                                                <option value="delete">Move To Trash</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="btn-wrap"><span class="d-none d-md-block"><button
-                                                                    class="btn btn-dim btn-outline-light disabled">Apply</button></span><span
-                                                                class="d-md-none"><button
-                                                                    class="btn btn-dim btn-outline-light btn-icon disabled"><em
-                                                                        class="icon ni ni-arrow-right"></em></button></span>
-                                                        </div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -105,11 +44,6 @@
                                             <div class="nk-tb-list nk-tb-ulist">
                                                 <div class="nk-tb-item nk-tb-head">
                                                     <div class="nk-tb-col nk-tb-col-check">
-                                                        <div
-                                                            class="custom-control custom-control-sm custom-checkbox notext">
-                                                            <input type="checkbox" class="custom-control-input"
-                                                                   id="uid"><label class="custom-control-label"
-                                                                                   for="uid"></label></div>
                                                     </div>
                                                     <div class="nk-tb-col"><span class="sub-text">Sarlavha</span></div>
                                                     <div class="nk-tb-col tb-col-xxl"><span
@@ -123,11 +57,6 @@
                                                 @foreach($category as $categories)
                                                     <div class="nk-tb-item">
                                                         <div class="nk-tb-col nk-tb-col-check">
-                                                            <div
-                                                                class="custom-control custom-control-sm custom-checkbox notext">
-                                                                <input type="checkbox" class="custom-control-input"
-                                                                       id="uid1"><label class="custom-control-label"
-                                                                                        for="uid1"></label></div>
                                                         </div>
                                                         <div class="nk-tb-col"><span>{{$categories->title_uz}}</span>
                                                         </div>
@@ -153,9 +82,10 @@
                                                                 <li class="nk-tb-action-hidden"><a
                                                                         class="btn btn-trigger btn-icon"
                                                                         data-bs-toggle="modal"
-                                                                        data-bs-target="#modalForm"
+                                                                        data-bs-target="#editBlog"
                                                                         data-bs-placement="top"
-                                                                        title="Edit"><em
+                                                                        onclick="EditBlog({{$categories->id}})"
+                                                                        title="Tahrirlash"><em
                                                                             class="icon ni ni-edit-fill"></em></a>
                                                                 </li>
                                                                 <li class="nk-tb-action-hidden"><a
@@ -164,7 +94,7 @@
                                                                                                    data-bs-toggle="tooltip"
                                                                                                    data-bs-placement="top"
                                                                                                    aria-label="Move To Trash"
-                                                                                                   data-bs-original-title="Move To Trash"><em
+                                                                                                   data-bs-original-title="O'chirish"><em
                                                                             class="icon ni ni-trash-fill"></em></a></li>
 
                                                             </ul>
@@ -202,23 +132,37 @@
                         <div class="col-xxl-5">
                             <div class="card card-bordered h-100">
                                 <div class="card-inner">
-                                    <form action="{{route('blog-category.store')}}" method="POST"
+                                    <form action="{{route('category-blog.store')}}" method="POST"
                                           enctype="multipart/form-data">
                                         @csrf
                                         <div class="row g-3 align-center">
                                             <div class="col-md-6">
                                                 <div class="form-group"><label class="form-label"
                                                                                for="name">Sarlavha</label><span
-                                                        class="form-note"></span>
+                                                        class="form-note">Sarlavha ma'limotlarini rus va o'zbek,ingliz tilida kiriting..</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <div class="form-control-wrap"><input type="text"
+                                                    <div class="form-control-wrap">
+                                                        <input type="text"
                                                                                           class="form-control"
                                                                                           id="title_uz"
                                                                                           name="title_uz"
-                                                                                          placeholder="Title"></div>
+                                                                                          placeholder="Title">
+                                                        <br>
+                                                        <input type="text"
+                                                               class="form-control"
+                                                               id="title_ru"
+                                                               name="title_ru"
+                                                               placeholder="Sarlavhani rus tilida">
+                                                        <br>
+                                                        <input type="text"
+                                                               class="form-control"
+                                                               id="title_en"
+                                                               name="title_en"
+                                                               placeholder="Sarlavhani ingliz tilida">
+                                                    </div>
                                                 </div>
                                                 @error('title_uz')
                                                 <span class="text-danger">{{$message}}</span>
@@ -230,7 +174,7 @@
                                             <div class="col-md-6">
                                                 <div class="form-group"><label class="form-label"
                                                                                for="slug">Slug</label><span
-                                                        class="form-note">Turkumlar manzili kiriting!</span>
+                                                        class="form-note">Turkumlar manzili rus va o'zbek, ingliz tilida kiriting!</span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -253,24 +197,6 @@
                                         <div class="row g-3 my-3 align-center">
                                             <div class="col-md-6">
                                                 <div class="form-group"><label class="form-label"
-                                                                               for="addDescription">Tavsif</label><span
-                                                        class="form-note">Tavsif matn kiritasz!</span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-control-wrap"><textarea
-                                                        class="form-control form-control-sm no-resize"
-                                                        id="addDescription"
-                                                        name="description_uz"
-                                                        placeholder="Write your description"></textarea></div>
-                                                @error('description_uz')
-                                                <span class="text-danger">{{$message}}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="row g-3 my-3 align-center">
-                                            <div class="col-md-6">
-                                                <div class="form-group"><label class="form-label"
                                                                                for="addDescription">Status</label><span
                                                         class="form-note">Holat tanlang!</span>
                                                 </div>
@@ -285,8 +211,8 @@
                                             <div class="row g-3">
                                                 <div class="col-12">
                                                     <div class="form-group mt-2">
-                                                        <button type="submit" class="btn btn-lg btn-primary">Add New
-                                                            Category
+                                                        <button type="submit" class="btn btn-lg btn-primary">
+                                                           Turkum Qo'shish
                                                         </button>
                                                     </div>
                                                 </div>

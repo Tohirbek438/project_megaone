@@ -43,7 +43,7 @@ class AppointmentController extends Controller
          return view('admin.appointment.view',['appointment' => $appointment]);
      }
      else{
-         return view('error');
+         return view('error.404');
      }
     }
 

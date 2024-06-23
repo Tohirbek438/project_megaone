@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title_en')->nullable();
             $table->string('title_ru')->nullable();
             $table->string('slug')->nullable();
-            $table->text('description_uz');
+            $table->text('description_uz')->nullable();
             $table->integer('status')->default(0);
             $table->timestamps();
         });
