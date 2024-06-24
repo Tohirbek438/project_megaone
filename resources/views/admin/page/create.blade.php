@@ -162,7 +162,7 @@
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12 col-sm-6" data-select2-id="12">
+                                                <div class="col-lg-12 col-sm-6">
                                                     <div class="form-group" data-select2-id="11"><label
                                                             class="form-label">Turkumlar</label>
                                                         <div class="form-control-wrap" data-select2-id="10">
@@ -172,8 +172,7 @@
                                                                     data-select2-id="1" tabindex="-1"
                                                                     aria-hidden="true">
                                                                 @foreach($pages as $page)
-                                                                    <option value="{{$page->id}}"
-                                                                            data-select2-id="{{$page->id}}">
+                                                                    <option value="{{$page->id}}">
                                                                         {{$page->name_uz}}
                                                                     </option>
                                                                 @endforeach
@@ -232,8 +231,6 @@
                                                                 <button type="submit" class="btn btn-primary">Publish
                                                                     Page
                                                                 </button>
-                                                            </li>
-                                                            <li><a href="#" class="link link-light">Save to Draft</a>
                                                             </li>
                                                         </ul>
                                                     </div>

@@ -31,7 +31,7 @@ background-position: top center;
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <input type="text" name="userPhone" class=" form-control m-mb-20"
-                                                           placeholder="{{$form->{'phone_'.App::getLocale()} }}">
+                                                           placeholder="{{$form->{'email_'.App::getLocale()} }}">
 
                                                     <br>
                                                     @error('userPhone')
@@ -52,7 +52,7 @@ background-position: top center;
                                                         <br>
                                                         @error('reservationDate')
                                                         <div class="alert alert-danger col-md-12">
-                                                            <span class="text-danger">{{$message}}</span>
+                                                            <span class="text-danger">Bugungi va keyingi sanalarni kiritishngiz kerak!</span>
                                                         </div>
                                                         @enderror
                                                     </div>

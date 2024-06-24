@@ -19,7 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('admin/media', \App\Http\Controllers\MediaAdminController::class);
     Route::resource('admin/category-media', \App\Http\Controllers\CategoryMediaController::class);
     Route::resource('admin/department', \App\Http\Controllers\DepartmentController::class);
-    Route::resource('admin/comment', \App\Http\Controllers\CommentController::class);
     Route::resource('admin/treatment', \App\Http\Controllers\TreatmentController::class);
     Route::resource('admin/information', \App\Http\Controllers\InformationPatientController::class);
     Route::resource('admin/page', \App\Http\Controllers\PageController::class);

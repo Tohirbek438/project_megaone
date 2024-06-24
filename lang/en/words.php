@@ -14,4 +14,5 @@ return [
     'cases' => 'Cases',
     'appointments' => 'Appointments',
     'doctors' => 'Doctors',
+    'not_found' => 'Posts are not available!',
 ];

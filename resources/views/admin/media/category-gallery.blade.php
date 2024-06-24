@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Admin')
+@section('title', 'Medialar')
 @section('content')
     @include('admin.media.media-create-modal')
     <div class="modal fade zoom" tabindex="-1" id="editForm">

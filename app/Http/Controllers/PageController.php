@@ -45,31 +45,30 @@ class PageController extends Controller
      */
     public function show(string $name)
     {
-        return view('admin.page.view-page',['page' => Page::where('name_uz',$name)->first()]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
+        $page = Page::where('name_uz',$name)->first();
+        if(isset($page)) {
+            return view('admin.page.view-page', ['page' => $page]);
+        }
+        else{
+            return view('error.404');
+        }
+        }
     public function edit($id)
     {
         return view('admin.page.edit',['page' => Page::find($id),'pages' => Menus::all()]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, string $id)
     {
         $this->pageService->Pageupdate($request,$id);
         return redirect()->back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $page = Page::find($id);
+        if($page->delete()){
+            return redirect()->back();
+        }
     }
 }

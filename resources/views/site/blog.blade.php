@@ -1,5 +1,4 @@
-<h2 align="center"><span class="title-clr">@lang('words.our_blog')</span></h2>
-<br>
+<h2 align="center" style="position: relative;top:5%!important;"><span class="title-clr">@lang('words.our_blog')</span></h2>
 <section id="ourblogs" class="bg-light">
     <div class="container">
         @if(isset($blog_start))

@@ -13,7 +13,6 @@ class Language
         if (session()->has('locale')) {
             app()->setLocale(session()->get('locale'));
         } else {
-            // Fallback to the default locale
             app()->setLocale(config('app.locale'));
         }
 

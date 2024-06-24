@@ -15,5 +15,6 @@ return [
     'cases' => 'Holatlar',
     'appointments' => 'Uchrashuvlar',
     'doctors' => 'Shifokorlar',
+    'not_found' => 'Postlar topilmadi!',
 ];
 

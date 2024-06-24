@@ -16,4 +16,8 @@ class Page extends Model
     {
       return $this->belongsTo(Image::class,'image_id');
     }
+    public function menu()
+    {
+        return $this->belongsTo(Menus::class, 'menu_category'); // Assuming Menu is your Menu model
+    }
 }

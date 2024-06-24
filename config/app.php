@@ -69,7 +69,7 @@ return [
 
     'locale' => 'uz',
 
-    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'uz'),
+    'fallback_locale' => env('APP_FALLBACK_LOCALE', 'ru'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'uz_UZ'),
 

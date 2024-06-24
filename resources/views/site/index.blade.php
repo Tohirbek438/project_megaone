@@ -2,7 +2,14 @@
 @section('title', 'Megaone')
 @section('content')
     <?php $home_pages = \App\Models\Page::where('status', 1)->orWhere('menu_category', $header->menu_id)->orderBy('id', 'ASC')->first() ?>
-    <?php $home_page = \App\Models\Page::where('status', 1)->orWhere('menu_category', $header->menu_id)->orderBy('id', 'DESC')->first() ?>
+    <?php
+    $home_page = \App\Models\Page::where('status', 1)
+        ->whereHas('menu', function ($query) use ($header) {
+            $query->where('id', $header->menu_id);
+        })
+        ->orderBy('id', 'DESC')
+        ->first();
+    ?>
     <section class="position-relative p-0 no-transition" id="home">
         <h2 class="d-none">as</h2>
         <div id="rev_slider_18_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="megaone-medical-1"
@@ -112,7 +119,9 @@
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
 
-                             style="z-index: 8; font-family:Roboto;"><a href="#whymegaone" class="btn btn-primary scroll" style="border-radius: 20px;">Batafsil</a>
+                             style="z-index: 8; font-family:Roboto;">
+                            <a href="#whymegaone" class="btn btn-primary scroll"
+                               style="border-radius: 20px;">Batafsil</a>
                         </div>
                     </li>
                     <!-- SLIDE  -->
@@ -227,7 +236,9 @@
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
 
-                             style="z-index: 8; font-family:Roboto;"><a href="#whymegaone" class="btn btn-primary scroll" style="border-radius: 10px;">Batafsil</a>
+                             style="z-index: 8; font-family:Roboto;"><a href="#whymegaone"
+                                                                        class="btn btn-primary scroll"
+                                                                        style="border-radius: 10px;">Batafsil</a>
                         </div>
                     </li>
 
@@ -241,21 +252,22 @@
         <ul class="social-icons-simple revicon darkcolor">
             <?php $heads = \App\Models\Header::first() ?>
             <li class="d-table"><a class="facebook-text-hvr" href="https://www.facebook.com/{{$heads->facebook}}"><i
-                        class="fab fa-facebook-f"></i></a>
+                            class="fab fa-facebook-f"></i></a>
             </li>
             <li class="d-table"><a class="twitter-text-hvr" href="https://twitter.com/{{$heads->twitter}}"><i
-                        class="fab fa-twitter"></i>
+                            class="fab fa-twitter"></i>
                 </a></li>
             <li class="d-table">
                 <a class="telegram-text-hvr" href="https://t.me/{{$heads->telegram}}">
                     <svg style="width: 16px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                         <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
                         <path
-                            d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
+                                d="M248 8C111 8 0 119 0 256S111 504 248 504 496 393 496 256 385 8 248 8zM363 176.7c-3.7 39.2-19.9 134.4-28.1 178.3-3.5 18.6-10.3 24.8-16.9 25.4-14.4 1.3-25.3-9.5-39.3-18.7-21.8-14.3-34.2-23.2-55.3-37.2-24.5-16.1-8.6-25 5.3-39.5 3.7-3.8 67.1-61.5 68.3-66.7 .2-.7 .3-3.1-1.2-4.4s-3.6-.8-5.1-.5q-3.3 .7-104.6 69.1-14.8 10.2-26.9 9.9c-8.9-.2-25.9-5-38.6-9.1-15.5-5-27.9-7.7-26.8-16.3q.8-6.7 18.5-13.7 108.4-47.2 144.6-62.3c68.9-28.6 83.2-33.6 92.5-33.8 2.1 0 6.6 .5 9.6 2.9a10.5 10.5 0 0 1 3.5 6.7A43.8 43.8 0 0 1 363 176.7z"/>
                     </svg>
                 </a>
             </li>
-            <li class="d-table"><a class="instagram-text-hvr" href="https://twitter.com/{{$heads->instagram}}"><i class="fab fa-instagram"></i>
+            <li class="d-table"><a class="instagram-text-hvr" href="https://twitter.com/{{$heads->instagram}}"><i
+                            class="fab fa-instagram"></i>
                 </a></li>
         </ul>
         <!-- END REVOLUTION SLIDER -->
@@ -305,8 +317,8 @@
                 <div class="row">
                     <div class="container">
                         <div
-                            class="main-title style-two d-flex justify-content-md-around align-items-center flex-column flex-md-row text-center text-md-left wow fadeIn"
-                            data-wow-delay="300ms">
+                                class="main-title style-two d-flex justify-content-md-around align-items-center flex-column flex-md-row text-center text-md-left wow fadeIn"
+                                data-wow-delay="300ms">
                             <div class="col-md-5 mb-4 mb-md-0">
                                 <h5>{{$page_megaone->{'name_'.App::getLocale()} }}</h5>
                                 <h2 class="pb-0"> {{$page_megaone->{'title_'.App::getLocale()} }}
@@ -370,7 +382,7 @@
                     <div class="department-sub alt-font text-center">
                     </div>
                     <div class="department-title main-font text-center"><h2><span
-                                class="title-clr">@lang('words.clinic_department')</span>
+                                    class="title-clr">@lang('words.clinic_department')</span>
                         </h2></div>
 
                 </div>
@@ -460,10 +472,10 @@
         @foreach($contacts as $contact)
                 <?php $page = \App\Models\Page::where('menu_category', $contact->menu_id)->first(); ?>
             @if(isset($page))
-            <section id="contactus" class="contact p-0 position-relative"
-                     style="background: url({{\Illuminate\Support\Facades\Storage::url($page->image->image_url)}});background-repeat: no-repeat;background-size:cover;">
-                @include('site.contact')
-            </section>
+                <section id="contactus" class="contact p-0 position-relative"
+                         style="background: url({{\Illuminate\Support\Facades\Storage::url($page->image->image_url)}});background-repeat: no-repeat;background-size:cover;">
+                    @include('site.contact')
+                </section>
             @else
             @endif
         @endforeach

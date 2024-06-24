@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title', 'Home page')
+@section('title', 'Information site page')
 @section('content')
     @include('admin.information.create-modal')
     <div class="modal fade" id="editInformation">

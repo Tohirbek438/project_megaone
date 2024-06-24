@@ -14,4 +14,5 @@ return [
     'cases' => 'Случаи',
     'appointments' => 'Назначения',
     'doctors' => 'Врачи',
+    'not_found' => 'Записей не найдено!',
 ];

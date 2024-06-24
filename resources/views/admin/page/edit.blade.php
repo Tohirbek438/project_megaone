@@ -244,8 +244,6 @@
                                                                     Page
                                                                 </button>
                                                             </li>
-                                                            <li><a href="#" class="link link-light">Save to Draft</a>
-                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>

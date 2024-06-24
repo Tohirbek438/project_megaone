@@ -23,7 +23,7 @@ class SiteController extends Controller{
         $menu_id_for_megaone = TreatmentDisease::first();
         if(isset($header) && isset($category_for_menu) && isset($menu_id_for_megaone)){
             $contacts =  About::all();
-            $page_gallery = Page::where('menu_category', $category_for_menu->menu_id)->first();
+            $page_gallery = Page::where('menu_category', $category_for_menu->menu_id)->orWhere('status',1)->first();
             $page =$page_gallery;
             $blog_start = Blog::orderBy('id','ASC')->take(1)->get();
             $blog_end = Blog::orderBy('id','DESC')->take(1)->get();

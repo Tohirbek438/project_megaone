@@ -3,7 +3,8 @@
 @section('content')
     <div class="nk-block nk-block-lg col-md-11 mx-4 my-4">
         <div class="nk-block-head">
-            <a href="{{route('page.create')}}" class="btn btn-outline-primary mb-4" style="float: right">Sahifa qo'shish</a>
+            <a href="{{route('page.create')}}" class="btn btn-outline-primary mb-4" style="float: right">Sahifa
+                qo'shish</a>
             <div class="nk-block-head-content">
                 <h4 class="nk-block-title">Sahifalar jadvali</h4>
             </div>
@@ -47,16 +48,25 @@
                         <td>{{$page->date}}</td>
                         <td class="tb-odr-action">
                             <div class="tb-odr-btns d-none d-md-inline">
-                                <a href="{{route('page.show',$page->name_uz)}}" class="btn btn-sm btn-primary">Ko'rish</a>
+                                <a href="{{route('page.show',$page->name_uz)}}"
+                                   class="btn btn-sm btn-primary">Ko'rish</a>
                             </div>
                             <div class="dropdown">
                                 <a class="text-soft dropdown-toggle btn btn-icon btn-trigger" data-bs-toggle="dropdown"
                                    data-offset="-8,0"><em class="icon ni ni-more-h"></em></a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
                                     <ul class="link-list-plain">
-                                        <li><a href="{{route('page.edit',$page->id)}}" class="text-primary">Tahrirlash</a></li>
-                                        <li><a href="{{route('page.show',$page->name_uz)}}" class="text-primary">Ko'rish</a></li>
-                                        <li><a href="#" class="text-danger">O'chirish</a></li>
+                                        <li><a href="{{route('page.edit',$page->id)}}"
+                                               class="text-primary">Tahrirlash</a></li>
+                                        <li><a href="{{route('page.show',$page->name_uz)}}"
+                                               class="text-primary">Ko'rish</a></li>
+                                        <li>
+                                            <form action="{{route('page.destroy',$page->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button style="border:none;background: white;" type="submit" class="mx-3 text-danger">O'chirish</button>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

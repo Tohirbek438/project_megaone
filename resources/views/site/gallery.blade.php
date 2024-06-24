@@ -26,7 +26,7 @@
                                     <a href="{{\Illuminate\Support\Facades\Storage::url($gallery->image->image_url)}}"
                                        class="text-center" data-fancybox="images">
                                         <div class="search-icon"><i class="fa fa-search"></i></div>
-                                        <h4 class="">{{$gallery->category->{'title_'.App::getLocale()} }}</h4>
+                                        <h4 class="">{{$gallery->{'name_'.App::getLocale()} }}</h4>
                                     </a>
                                 </div>
                             </li>
